@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Ms-Registry",
+			"name": "Microservices-Registry",
 			"item": [
 				{
 					"name": "unregister",
@@ -14,14 +14,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9070/ngati/services/unregister/userDetails01",
+							"raw": "http://localhost:9070/cubetiq/services/unregister/userDetails01",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9070",
 							"path": [
-								"ngati",
+								"cubetiq",
 								"services",
 								"unregister",
 								"userDetails01"
@@ -45,14 +45,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9070/ngati/services/register/userDetails",
+							"raw": "http://localhost:9070/cubetiq/services/register/userDetails",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9070",
 							"path": [
-								"ngati",
+								"cubetiq",
 								"services",
 								"register",
 								"userDetails"
@@ -67,14 +67,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9070/ngati/services",
+							"raw": "http://localhost:9070/cubetiq/services",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9070",
 							"path": [
-								"ngati",
+								"cubetiq",
 								"services"
 							]
 						}
@@ -87,14 +87,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9070/ngati/services/userDetails",
+							"raw": "http://localhost:9070/cubetiq/services/userDetails",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9070",
 							"path": [
-								"ngati",
+								"cubetiq",
 								"services",
 								"userDetails"
 							]
@@ -108,14 +108,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9070/ngati/kv",
+							"raw": "http://localhost:9070/cubetiq/kv",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9070",
 							"path": [
-								"ngati",
+								"cubetiq",
 								"kv"
 							]
 						}
@@ -128,14 +128,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9070/ngati/kv/service_port",
+							"raw": "http://localhost:9070/cubetiq/kv/service_port",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9070",
 							"path": [
-								"ngati",
+								"cubetiq",
 								"kv",
 								"service_port"
 							]
@@ -149,14 +149,14 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9070/ngati/services/userDetails/metadata?service_ip=10.10.30.40&service_port=9045",
+							"raw": "http://localhost:9070/cubetiq/services/userDetails/metadata?service_ip=10.10.30.40&service_port=9045",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9070",
 							"path": [
-								"ngati",
+								"cubetiq",
 								"services",
 								"userDetails",
 								"metadata"
@@ -181,14 +181,14 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9070/ngati/kv?service_ip=10.10.30.40&service_port=9045",
+							"raw": "http://localhost:9070/cubetiq/kv?service_ip=10.10.30.40&service_port=9045",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9070",
 							"path": [
-								"ngati",
+								"cubetiq",
 								"kv"
 							],
 							"query": [
