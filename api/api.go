@@ -1,11 +1,12 @@
 package api
 
 import (
+	"cubetiq/registry/controller"
+	"cubetiq/registry/utils/propertymanager"
+	"net"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"net"
-	"nitra/registry/controller"
-	"nitra/registry/utils/propertymanager"
 )
 
 func InitializeAPIs() error {
@@ -17,16 +18,16 @@ func InitializeAPIs() error {
 func GetRoutes() *gin.Engine  {
 	r := gin.Default()
 
-	r.POST("/ngati/services/register/:serviceName", controller.RegisterHandler)
-	r.DELETE("/ngati/services/de-register/:serviceName", controller.DeRegisterHandler)
-	r.GET("/ngati/services/:serviceName", controller.QueryHandler)
-	r.GET("/ngati/services", controller.QueryAllHandler)
-	r.PUT("/ngati/services/:serviceName/metadata", controller.UpdateHandler)
+	r.POST("/cubetiq/services/register/:serviceName", controller.RegisterHandler)
+	r.DELETE("/cubetiq/services/unregister/:serviceName", controller.DeRegisterHandler)
+	r.GET("/cubetiq/services/:serviceName", controller.QueryHandler)
+	r.GET("/cubetiq/services", controller.QueryAllHandler)
+	r.PUT("/cubetiq/services/:serviceName/metadata", controller.UpdateHandler)
 	r.GET("/health", controller.HealthHandler)
 
 	//KV handlers
-	r.GET("/ngati/kv/:keyName", controller.GetKeyHandler)
-	r.GET("/ngati/kv", controller.GetAllKeysHandler)
-	r.PUT("/ngati/kv", controller.SetKeysHandler)
+	r.GET("/cubetiq/kv/:keyName", controller.GetKeyHandler)
+	r.GET("/cubetiq/kv", controller.GetAllKeysHandler)
+	r.PUT("/cubetiq/kv", controller.SetKeysHandler)
 	return r
 }

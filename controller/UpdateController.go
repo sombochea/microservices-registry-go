@@ -1,12 +1,13 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/tidwall/sjson"
+	"cubetiq/registry/model"
+	"cubetiq/registry/utils/redis"
 	"log"
 	"net/http"
-	"nitra/registry/model"
-	"nitra/registry/utils/redis"
+
+	"github.com/gin-gonic/gin"
+	"github.com/tidwall/sjson"
 )
 
 func UpdateHandler(ctx *gin.Context) {

@@ -2,17 +2,22 @@ package redis
 
 import (
 	"context"
-	"github.com/go-redis/redis/v8"
+	"cubetiq/registry/utils/propertymanager"
 	"log"
-	"nitra/registry/utils/propertymanager"
+	"strconv"
+
+	"github.com/go-redis/redis/v8"
 )
 
 var redisClient *redis.Client
 var ctx = context.Background()
 
 func InitializeRedis()  {
+	var host string =propertymanager.GetStringProperty("redis.host", "localhost")
+	var port string =strconv.Itoa(propertymanager.GetIntProperty("redis.port", 6379))
+
 	redisClient = redis.NewClient(&redis.Options{
-		Addr:     propertymanager.GetStringProperty("redis.host", "localhost") + ":" + propertymanager.GetStringProperty("redis.port", "6379") ,
+		Addr:     host + ":" + port,
 		Password: propertymanager.GetStringProperty("redis.password", ""),
 		DB:       propertymanager.GetIntProperty("redis.database", 0),
 		PoolSize: propertymanager.GetIntProperty("redis.conn.pool-size", 10),

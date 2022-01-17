@@ -9,12 +9,12 @@
 			"name": "Ms-Registry",
 			"item": [
 				{
-					"name": "De-register",
+					"name": "unregister",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9070/ngati/services/de-register/userDetails01",
+							"raw": "http://localhost:9070/ngati/services/unregister/userDetails01",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -23,7 +23,7 @@
 							"path": [
 								"ngati",
 								"services",
-								"de-register",
+								"unregister",
 								"userDetails01"
 							]
 						}

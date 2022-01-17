@@ -32,6 +32,7 @@ func GetStringProperty(key string, defaultValue ...string) string {
 	if keyValue == "" && len(defaultValue) != 0 {
 		return defaultValue[0]
 	}
+	log.Println("Key: ", key, " Value: ", keyValue)
 	return keyValue
 }
 

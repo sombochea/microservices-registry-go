@@ -1,12 +1,13 @@
 package service
 
 import (
-	"github.com/go-resty/resty/v2"
+	"cubetiq/registry/model"
+	"cubetiq/registry/utils/propertymanager"
+	"cubetiq/registry/utils/redis"
 	"log"
-	"nitra/registry/model"
-	"nitra/registry/utils/propertymanager"
-	"nitra/registry/utils/redis"
 	"time"
+
+	"github.com/go-resty/resty/v2"
 )
 
 func HealthCheckHandler()  {

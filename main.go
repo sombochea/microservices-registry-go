@@ -1,8 +1,8 @@
 package main
 
 import (
+	"cubetiq/registry/cmd"
 	"log"
-	"nitra/registry/cmd"
 )
 
 func main()  {

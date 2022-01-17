@@ -1,10 +1,11 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
+	"cubetiq/registry/model"
+	"cubetiq/registry/utils/redis"
 	"net/http"
-	"nitra/registry/model"
-	"nitra/registry/utils/redis"
+
+	"github.com/gin-gonic/gin"
 )
 
 func QueryHandler(ctx *gin.Context) {
