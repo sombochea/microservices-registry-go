@@ -12,7 +12,7 @@ type ServiceDefinition struct {
 	Status          string `json:"status"`
 }
 
-func(t *ServiceDefinition) ToJson() string {
+func (t *ServiceDefinition) ToJson() string {
 	jsonBytes, _ := json.Marshal(t)
 	return string(jsonBytes)
 }

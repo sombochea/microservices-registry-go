@@ -10,12 +10,11 @@ import (
 	"github.com/go-resty/resty/v2"
 )
 
-func HealthCheckHandler()  {
-
-	for{
+func HealthCheckHandler() {
+	for {
 		serviceMap, err := redis.HGetAll("services")
 		if err != nil {
-			log.Println("Failed to retrieve services:" ,err)
+			log.Println("Failed to retrieve services:", err)
 			time.Sleep(time.Duration(propertymanager.GetIntProperty("health-check.retry.delay-on-fail")) * time.Second)
 			HealthCheckHandler()
 		}
@@ -25,9 +24,9 @@ func HealthCheckHandler()  {
 			time.Sleep(time.Duration(propertymanager.GetIntProperty("health-check.retry.delay-on-no-service")) * time.Second)
 			HealthCheckHandler()
 		}
-		for serviceName, serviceJson  := range serviceMap{
+		for serviceName, serviceJson := range serviceMap {
 			serviceDef, err := model.FromJson(serviceJson)
-			if err != nil{
+			if err != nil {
 				log.Println("Failed to decode service: ", serviceName)
 			}
 			go check(serviceName, serviceDef)
@@ -36,7 +35,7 @@ func HealthCheckHandler()  {
 	}
 }
 
-func check(serviceName string, service *model.ServiceDefinition)  {
+func check(serviceName string, service *model.ServiceDefinition) {
 	healthCheckUri := service.HttpScheme + "://" + service.ServiceIp + ":" + service.ServicePort + service.HealthCheckPath
 	client := resty.New().R()
 	response, err := client.Get(healthCheckUri)
@@ -51,8 +50,8 @@ func check(serviceName string, service *model.ServiceDefinition)  {
 	updateStatus(serviceName, service.ToJson())
 }
 
-func updateStatus(serviceName, serviceJson string)  {
-	if err := redis.HSet("services", serviceName, serviceJson); err != nil{
+func updateStatus(serviceName, serviceJson string) {
+	if err := redis.HSet("services", serviceName, serviceJson); err != nil {
 		log.Println("Failed to update service status:", err)
 	}
 }

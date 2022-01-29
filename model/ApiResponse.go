@@ -1,7 +1,7 @@
 package model
 
 type ApiErrorResponse struct {
-	StatusCode int `json:"status_code"`
+	StatusCode        int    `json:"status_code"`
 	StatusDescription string `json:"status_description"`
 }
 

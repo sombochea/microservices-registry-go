@@ -7,6 +7,6 @@ import (
 
 func HealthHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
-		"status":"OK",
+		"status": "OK",
 	})
 }

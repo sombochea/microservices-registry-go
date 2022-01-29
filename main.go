@@ -5,8 +5,8 @@ import (
 	"log"
 )
 
-func main()  {
-	if err := cmd.Start(); err != nil{
+func main() {
+	if err := cmd.Start(); err != nil {
 		log.Fatal("Failed to start ngati registry:", err)
 	}
 }

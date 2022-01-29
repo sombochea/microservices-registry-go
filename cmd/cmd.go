@@ -10,7 +10,7 @@ import (
 
 func Start() error {
 	log.Println("Initialize configurations...")
-	if err := propertymanager.InitializeConfig(); err != nil{
+	if err := propertymanager.InitializeConfig(); err != nil {
 		return err
 	}
 

@@ -15,7 +15,7 @@ func InitializeAPIs() error {
 	return router.Run(net.JoinHostPort("", propertymanager.GetStringProperty("registry.port")))
 }
 
-func GetRoutes() *gin.Engine  {
+func GetRoutes() *gin.Engine {
 	r := gin.Default()
 
 	r.POST("/cubetiq/services/register/:serviceName", controller.RegisterHandler)

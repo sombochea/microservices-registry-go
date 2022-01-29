@@ -12,9 +12,9 @@ import (
 var redisClient *redis.Client
 var ctx = context.Background()
 
-func InitializeRedis()  {
-	var host string =propertymanager.GetStringProperty("redis.host", "localhost")
-	var port string =strconv.Itoa(propertymanager.GetIntProperty("redis.port", 6379))
+func InitializeRedis() {
+	var host string = propertymanager.GetStringProperty("redis.host", "localhost")
+	var port string = strconv.Itoa(propertymanager.GetIntProperty("redis.port", 6379))
 
 	redisClient = redis.NewClient(&redis.Options{
 		Addr:     host + ":" + port,
@@ -25,7 +25,7 @@ func InitializeRedis()  {
 	log.Println("RedisClient initialized successfully...")
 }
 
-func HSet(key, field, value string) error  {
+func HSet(key, field, value string) error {
 	return redisClient.HSet(ctx, key, field, value).Err()
 }
 
@@ -37,11 +37,11 @@ func HDel(key, field string) (int64, error) {
 	return redisClient.HDel(ctx, key, field).Result()
 }
 
-func HGetAll(key string)  (map[string]string, error){
+func HGetAll(key string) (map[string]string, error) {
 	return redisClient.HGetAll(ctx, key).Result()
 }
 
-func IsRedisNil(err error) bool  {
+func IsRedisNil(err error) bool {
 	if err == redis.Nil {
 		return true
 	}
